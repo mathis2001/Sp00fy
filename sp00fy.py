@@ -63,7 +63,7 @@ DMARC record found for {args.domain}:
 	if "p=none" in record:
         	print(bcolors.OK+"[+] "+bcolors.RESET+"Target is potentially vulnerable.")
 	else:
-		print(bcolors.FAIL+"[!] "+bcolors.RESET+"Target is not vulnerable.")
+		print(bcolors.FAIL+"[!] "+bcolors.RESET+"Target must not be vulnerable.")
 
 	if args.find_emails:
 		emails = mailFinder()
