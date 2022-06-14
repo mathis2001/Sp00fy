@@ -19,7 +19,7 @@ $ python3 sp00fy.py
 
 - requests
 
-if you want to use the email find funtion you will have to copy your https://hunter.io api key access and paste it in your environment variables as 'HUNTER_KEY'.
+if you want to use the email find funtion you will have to copy your [hunter.io](https://hunter.io/api-keys) api key access and paste it in your environment variables as 'HUNTER_KEY'.
 
 ![image](https://user-images.githubusercontent.com/40497633/173600536-26996bd7-4a7d-490f-bb16-bbf5a659d962.png)
 
