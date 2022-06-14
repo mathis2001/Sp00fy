@@ -38,6 +38,14 @@ optional arguments:
 
 ```
 
+## Use case
+
+You want to verify if your domain is vulnerable to email spoofing ?
+
+You can use this tool to simply check your DMARC record. If it is potentially vulnerable, you can check for emails by using the '-f' option and use one of the email to simulate the spoofing of this email (exp: info@target.xyz). The anonymous message send is not already available so you can use https://emkei.cz to send your mail for the moment.
+
+If you receive the mail in your mailbox or spam, it confirm that your domain is vulnerable.
+
 ## Screens:
 
 ![tempsnip](https://user-images.githubusercontent.com/40497633/173594850-7715522f-4c6c-4cae-a18a-0c8d9ec5feae.png)
