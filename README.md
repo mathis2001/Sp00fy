@@ -19,6 +19,8 @@ $ python3 sp00fy.py
 
 - requests
 
+if you want to use the email find funtion you will have to copy your hunter.io api key access and paste it in your environment variables as 'HUNTER_KEY'
+
 ## Usage:
 ```bash
 usage: sp00fy.py [-h] [-d DOMAIN] [-f] [-l LIMIT]
