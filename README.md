@@ -1,6 +1,38 @@
 # Sp00fy
 Simple python script to check for email spoofing on a given domain.
 
+## Install:
+```bash
+$ git clone https://github.com/mathis2001/Sp00fy
+
+$ cd Sp00fy
+
+$ python3 sp00fy.py
+```
+## Requirements:
+
+- Python3
+
+- Pip3
+
+- dns.resolver
+
+- requests
+
+## Usage:
+```bash
+usage: sp00fy.py [-h] [-d DOMAIN] [-f] [-l LIMIT]
+```
+## options:
+```bash
+optional arguments:
+  -h, --help            show this help message and exit
+  -d DOMAIN, --domain DOMAIN   Target domain
+  -f, --find-emails     Find emails for the given domain
+  -l LIMIT, --limit LIMIT   Number of results wanted
+
+```
+
 Done:
 
 check for dmarc record for a given domain
