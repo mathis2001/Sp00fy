@@ -26,7 +26,7 @@ if you want to use the email find funtion you will have to copy your [hunter.io]
 
 ## Usage:
 ```bash
-usage: sp00fy.py [-h] [-d DOMAIN] [-f] [-l LIMIT]
+usage: ./sp00fy.py [-h] [-d DOMAIN] [-f] [-l LIMIT]
 ```
 ## options:
 ```bash
