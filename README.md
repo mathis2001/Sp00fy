@@ -46,7 +46,7 @@ You can use this tool to simply check your DMARC record. If it is potentially vu
 
 If you receive the mail in your mailbox or spam, it confirm that your domain is vulnerable.
 
-Disclaimer: This tool have been made to help testing email spoofing for your own domain or your company domain with authorizations. Please, do not use it for illegal purposes.
+### Disclaimer: This tool have been designed to help testing email spoofing for your own domain or your company domain with authorizations. Please, do not use it for illegal purposes.
 
 ## Screens:
 
