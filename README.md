@@ -46,6 +46,8 @@ You can use this tool to simply check your DMARC record. If it is potentially vu
 
 If you receive the mail in your mailbox or spam, it confirm that your domain is vulnerable.
 
+Disclaimer: This tool have been made to help testing your own domain or your company domain with authorizations. Please, do not use it for illegal purposes.
+
 ## Screens:
 
 ![tempsnip](https://user-images.githubusercontent.com/40497633/173594850-7715522f-4c6c-4cae-a18a-0c8d9ec5feae.png)
