@@ -54,6 +54,13 @@ If you receive the mail in your mailbox or spam, it confirm that your domain is 
 
 ![tempsnip](https://user-images.githubusercontent.com/40497633/173595580-9fea5ca5-d811-46ae-ae0f-2053d19a748a.png)
 
+![code](https://user-images.githubusercontent.com/40497633/174271419-496bf363-5fcb-437d-9d20-899d0d89383a.png)
+
+![mail1](https://user-images.githubusercontent.com/40497633/174272921-0321ab52-ed7d-49dd-b124-c06b837ad99b.png)
+
+![mail2](https://user-images.githubusercontent.com/40497633/174272998-4f57a252-571a-46a2-80d5-6a1910f9f04e.png)
+
+
 ## TO DO:
 
 add an option to send an anonymous mail with @target.xyz name
