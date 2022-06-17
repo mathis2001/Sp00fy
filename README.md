@@ -60,7 +60,3 @@ If you receive the mail in your mailbox or spam, it confirm that your domain is 
 
 ![mail2](https://user-images.githubusercontent.com/40497633/174272998-4f57a252-571a-46a2-80d5-6a1910f9f04e.png)
 
-
-## TO DO:
-
-add an option to send an anonymous mail with @target.xyz name
