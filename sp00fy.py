@@ -1,4 +1,5 @@
 import requests
+from requests_html import HTMLSession
 import sys
 import dns.resolver
 import argparse
@@ -14,8 +15,79 @@ class bcolors:
 parser = argparse.ArgumentParser()
 parser.add_argument("-d", "--domain", help="Target domain", type=str)
 parser.add_argument("-f", "--find-emails", help="Find emails for the given domain", action="store_true")
+parser.add_argument("-s", "--send", help="send anonymous email", action="store_true")
 parser.add_argument("-l", "--limit", help="Number of results wanted", type=str)
 args = parser.parse_args()
+
+def send_mail(to, subject, body, debug, name, sender):
+	headers = {
+        	"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9",
+        	"Accept-Encoding": "gzip, deflate, br",
+        	"Accept-Language": "en-US,en;q=0.9",
+        	"Cache-Control": "max-age=0",
+        	"Connection": "keep-alive",
+        	"Content-Length": "3072",
+        	"Cookie": "__gads=ID=a33e3b44296022c7-22066d337bd100ce:T=1648910614:RT=1648910614:S=ALNI_MZLGzNvZhCPKcpiV2aS8Nkg4um4SQ",
+        	"Host": "emkei.cz",
+        	"Origin": "null",
+        	"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="99", "Microsoft Edge";v="99"',
+        	"sec-ch-ua-mobile": "?0",
+        	"sec-ch-ua-platform": '"Linux"',
+        	"Sec-Fetch-Dest": "document",
+        	"Sec-Fetch-Mode": "navigate",
+        	"Sec-Fetch-Site": "same-origin",
+        	"Sec-Fetch-User": "?1",
+        	"Upgrade-Insecure-Requests": "1",
+        	"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.74 Safari/537.36 Edg/99.0.1150.55"
+	}
+	payload = {
+        	"fromname": name,
+        	"from": sender,
+        	"rcpt": to,
+        	"subject": subject,
+        	"attachment": "(binary)",
+        	"reply": "",
+        	"errors": "",
+        	"cc": "",
+        	"bcc": "",
+        	"importance": "normal",
+        	"xmailer": "0",
+        	"customxm": "",
+        	"confirmd": "",
+        	"confirmr": "",
+        	"addh": "",
+        	"smtp": "",
+        	"smtpp": "",
+        	"current": "on",
+        	"charset": "utf-8",
+        	"mycharset": "",
+        	"encrypt": "no",
+        	"ctype": "plain",
+        	"rte": "0",
+        	"text": body,
+        	"ok": "Send"
+    	}
+	
+	session=HTMLSession()
+	response = session.get("https://emkei.cz/")
+	for _ in range(10):
+		if response.html.search('name="g-recaptcha-response" value="{}"') is None:
+			response.html.render()
+	payload['g-recaptcha-response']=response.html.search('name="g-recaptcha-response" value="{}"')[0]
+	
+	request = requests.request(
+        method="POST",
+        url="https://emkei.cz/",
+        headers=headers,
+        data=payload)
+
+	if debug:
+		print(request.status_code)
+
+	if request.status_code != 200:
+		if "E-mail sent successfully" not in request.text:
+			return -1
+	return 0
 
 def mailFinder():
 	HUNTER_KEY=os.getenv('HUNTER_KEY')
@@ -78,6 +150,18 @@ DMARC record found for {args.domain}:
 		print(bcolors.INFO+"\n [*] "+bcolors.RESET+"emails found:\n")
 		for email in emails:
 			print(bcolors.OK+"[+] "+bcolors.RESET+email)
+	if args.send:
+		print(bcolors.INFO+"\n [*] "+bcolors.RESET+"Create your anonymous mail with emkei.cz.\n")
+		name = input("From name: ")
+		sender = input("From E-mail: ")
+		to = input("To: ")
+		subject = "VULNERABLE"
+		body ="""
+		You see this email ?
+	It meen that your domain is vulnerable to email spoofing.
+		""",
+		debug=True
+		send_mail(to, subject, body, debug, name, sender)
 try:
 	main()
 except Exception as e:
