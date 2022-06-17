@@ -27,7 +27,7 @@ def send_mail(to, subject, body, debug, name, sender):
         	"Cache-Control": "max-age=0",
         	"Connection": "keep-alive",
         	"Content-Length": "3072",
-        	"Cookie": "__gads=ID=a33e3b44296022c7-22066d337bd100ce:T=1648910614:RT=1648910614:S=ALNI_MZLGzNvZhCPKcpiV2aS8Nkg4um4SQ",
+        	#"Cookie": "",
         	"Host": "emkei.cz",
         	"Origin": "null",
         	"sec-ch-ua": '" Not A;Brand";v="99", "Chromium";v="99", "Microsoft Edge";v="99"',
