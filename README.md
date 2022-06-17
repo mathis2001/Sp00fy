@@ -26,7 +26,7 @@ if you want to use the email find funtion you will have to copy your [hunter.io]
 
 ## Usage:
 ```bash
-usage: ./sp00fy.py [-h] [-d DOMAIN] [-f] [-l LIMIT]
+usage: ./sp00fy.py [-h] [-d DOMAIN] [-f] [-l LIMIT] [-s]
 ```
 ## options:
 ```bash
@@ -34,6 +34,7 @@ optional arguments:
   -h, --help            show this help message and exit
   -d DOMAIN, --domain DOMAIN   Target domain
   -f, --find-emails     Find emails for the given domain
+  -s, --send   Send email anonymously
   -l LIMIT, --limit LIMIT   Number of results wanted
 
 ```
