@@ -83,6 +83,7 @@ def send_mail(to, subject, body, debug, name, sender):
 
 	if debug:
 		print(request.status_code)
+		print(bcolors.INFO+"\n[*] "+bcolors.RESET+"E-mail sent successfully.")
 
 	if request.status_code != 200:
 		if "E-mail sent successfully" not in request.text:
