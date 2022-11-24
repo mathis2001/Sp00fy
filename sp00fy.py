@@ -135,13 +135,13 @@ DMARC record found for {args.domain}:
 ---------------------------
 	''')
 
-	if "p=none" in record:		
+	if ";p=none" in record:		
 		print(bcolors.FAIL+"[!] "+bcolors.RESET+"DMARC policy is set to "+bcolors.FAIL+"none"+bcolors.RESET+".")
 		print(bcolors.OK+"[+] "+bcolors.RESET+"Target is potentially vulnerable.")
-	elif "p=quarantine" in record:
+	elif ";p=quarantine" in record:
 		print(bcolors.WARNING+"[-] "+bcolors.RESET+"DMARC policy is set to "+bcolors.WARNING+"quarantine"+bcolors.RESET+".")
 		print(bcolors.FAIL+"[!] "+bcolors.RESET+"Target may be vulnerable.")
-	elif "p=reject" in record:
+	elif ";p=reject" in record:
 		print(bcolors.OK+"[+] "+bcolors.RESET+"DMARC policy is set to "+bcolors.OK+"reject"+bcolors.RESET+".")
 		print(bcolors.FAIL+"[!] "+bcolors.RESET+"Target must not be vulnerable.")
 	else:
